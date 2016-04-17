@@ -9,12 +9,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 483248}
   - 212: {fileID: 21290842}
-  - 61: {fileID: 6154536}
   - 50: {fileID: 5048654}
   - 114: {fileID: 11407484}
   - 114: {fileID: 11423510}
   - 114: {fileID: 11420502}
   - 114: {fileID: 11412802}
+  - 95: {fileID: 9509078}
   m_Layer: 0
   m_Name: MANDIOCA_ELECTRICITY
   m_TagString: MANDIOCA
@@ -50,19 +50,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6154536
-BoxCollider2D:
+--- !u!95 &9509078
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105324}
   m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 14.3999996}
-  serializedVersion: 2
-  m_Size: {x: 18.7999992, y: 16.2999992}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 380a1f09ea8508e44b2cab3037cf0c20, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11407484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,7 +140,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 07eae84926842614a802abbba90847de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cfa58d12bd00eab439256ad1419e11e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -148,7 +152,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 07eae84926842614a802abbba90847de,
+      objectReference: {fileID: 21300000, guid: cfa58d12bd00eab439256ad1419e11e3,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
