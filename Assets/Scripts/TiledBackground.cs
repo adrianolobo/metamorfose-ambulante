@@ -9,7 +9,7 @@ public class TiledBackground : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		var newWidth = !scaleHorizontally ? 1 :  Mathf.Ceil (Screen.width / (textureSize * PixelPerfectCamera.scale));
+		var newWidth = !scaleHorizontally ? 1 :  Mathf.Ceil (Screen.width / (textureSize * PixelPerfectCamera.scale))+2;
 		var newHeight = !scaleVertically ? 1 :  Mathf.Ceil (Screen.height / (textureSize * PixelPerfectCamera.scale));
 
 		transform.localScale = new Vector3 (newWidth*textureSize,newHeight*textureSize,1);
