@@ -8,8 +8,10 @@ public class Element : MonoBehaviour{
 
 	public string element;
 
-	string[] ElementList = {"water","electricity","fire","wood"};
+
 	string[] ElementWeaknessList = {"electricity","wood","water","fire"};
+	string[] ElementList = {"water","electricity","fire","wood"};
+	string[] ElementStrengthList = {"fire","water","wood","electricity"};
 	
 
 	// Use this for initialization
@@ -32,8 +34,21 @@ public class Element : MonoBehaviour{
 			Debug.Log (element + " - "+ element_mandioca);
 			
 			int index = System.Array.IndexOf(ElementList,element);
+			if(ElementStrengthList[index] == element_mandioca){
+				Debug.Log ("FORTE!!!!!");
+				GameObjectUtil.Destroy(coll.gameObject);
+				//float vol = volHighRange;
+				//source.PlayOneShot(shootSound,vol);
+				//mandiocaManager.AddMandioca();
+				//placarMandioca.text = mandiocaManager.GetCountMandioca();
+			}
 			if(ElementWeaknessList[index] == element_mandioca){
-				Debug.Log ("BOOOOOMMMMM!!!!!");
+				Debug.Log ("FRACO!!!!!");
+				GameObjectUtil.Destroy(gameObject);
+				//float vol = volHighRange;
+				//source.PlayOneShot(shootSound,vol);
+				//mandiocaManager.AddMandioca();
+				//placarMandioca.text = mandiocaManager.GetCountMandioca();
 			}
 		}
 	}

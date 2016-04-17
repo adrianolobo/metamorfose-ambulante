@@ -33,8 +33,7 @@ public class GameManager : MonoBehaviour {
 		spawner = GameObject.Find ("Spawner").GetComponent<Spawner> ();
 		timeManager = GetComponent<TimeManager> ();
         PausePanel.SetActive (true);
-       
-
+      
     }
 
 	// Use this for initialization
