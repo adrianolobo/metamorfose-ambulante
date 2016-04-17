@@ -8,6 +8,7 @@ public class Obstacle : MonoBehaviour, IRecycle {
 	public Vector2 colliderOffset = Vector2.zero;
 
 	public void Restart(){
+
 		var renderer = GetComponent<SpriteRenderer> ();
 		renderer.sprite = sprites [Random.Range (0, sprites.Length)];
 

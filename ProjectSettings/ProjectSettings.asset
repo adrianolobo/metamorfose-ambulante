@@ -11,7 +11,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: CapuchetaGames
-  productName: Foge, Dilma
+  productName: Metarmofose
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -150,7 +150,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/loboa/Documents/UnityProjects/VALHALLA1/builds/android/FogeDilma.keystore
+  AndroidKeystoreName: 
   AndroidKeyaliasName: fogedilma
   AndroidTVCompatibility: 1
   AndroidIsGame: 1

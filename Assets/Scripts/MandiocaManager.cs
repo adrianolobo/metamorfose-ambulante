@@ -13,13 +13,10 @@ public class MandiocaManager : MonoBehaviour {
 
     public void AddMandioca() {
         contMandioca += 1;
-        Debug.Log(contMandioca);
     }
 
     public void CleanMandioca() {
         contMandioca = 0;
-        Debug.Log(contMandioca);
-        Debug.Log("zerado");
     }
 
     public String GetCountMandioca() {

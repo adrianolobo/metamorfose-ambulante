@@ -17,7 +17,7 @@ public class RotateButton : MonoBehaviour
     void Update()
     {
         cont += Time.fixedDeltaTime;
-        Debug.Log(cont);
+        //Debug.Log(cont);
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             {
@@ -28,8 +28,8 @@ public class RotateButton : MonoBehaviour
         }
         if (cont > 0.2f)
         {
-            transform.Rotate(Vector3.forward * -15);
-            Debug.Log(cont);
+            transform.Rotate(Vector3.forward * -120*Time.fixedDeltaTime);
+            //Debug.Log(cont);
         }
         
 

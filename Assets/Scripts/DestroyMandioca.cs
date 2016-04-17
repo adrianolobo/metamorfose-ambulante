@@ -31,14 +31,14 @@ public class DestroyMandioca : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag  == "MANDIOCA") {
+        /*if (col.gameObject.tag  == "MANDIOCA") {
             GameObjectUtil.Destroy(col.gameObject);
             float vol = volHighRange;
             source.PlayOneShot(shootSound,vol);
             mandiocaManager.AddMandioca();
             placarMandioca.text = mandiocaManager.GetCountMandioca();
 
-        }
+        }*/
         
     }
 
