@@ -151,6 +151,7 @@ public class GameManager : MonoBehaviour {
 
         timeElapsed = 0;
 		beatBestTime = false;
+		player.GetComponent<Element> ().setRandomElement ();
 	}
 
 	string FormatScore(float value){

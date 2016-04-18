@@ -21,13 +21,19 @@ public class Element : MonoBehaviour{
 
 	void Start () {
 		if(gameObject.tag == "Player"){
-			int range = Random.Range (0, ElementList.Length);
-			element = ElementList [range];
-			//Debug.Log("RANDOM: "+element+" RANGE: "+range);
+			setRandomElement();
+
 		}
 
 	}
 
+	public void setRandomElement(){
+		int range = Random.Range (0, ElementList.Length);
+		gameObject.GetComponent<Animator>().SetInteger("elementState",range+1);
+		element = ElementList [range];
+		Debug.Log("ELEMENT");
+	}
+	
 	void OnCollisionEnter2D(Collision2D coll){
 		if (coll.gameObject.tag == "MANDIOCA") {
 			string element_mandioca = coll.gameObject.GetComponent<Element>().element;
@@ -42,20 +48,10 @@ public class Element : MonoBehaviour{
 				//mandiocaManager.AddMandioca();
 				//placarMandioca.text = mandiocaManager.GetCountMandioca();
 			}
-			if(ElementWeaknessList[index] == element_mandioca){
-				Debug.Log ("FRACO!!!!!");
-				GameObjectUtil.Destroy(gameObject);
-				//float vol = volHighRange;
-				//source.PlayOneShot(shootSound,vol);
-				//mandiocaManager.AddMandioca();
-				//placarMandioca.text = mandiocaManager.GetCountMandioca();
-			}
 		}
 	}
-
-	void setRandomElement(){
-	}
 	
+
 	// Update is called once per frame
 	void Update () {
 	}
