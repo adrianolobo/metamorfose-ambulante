@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 
 
@@ -7,6 +8,8 @@ public class Element : MonoBehaviour{
 
 
 	public string element;
+	public Text placarMandioca; 
+	private MandiocaManager mandiocaManager;
 
 
 	string[] ElementWeaknessList = {"electricity","wood","water","fire"};
@@ -17,6 +20,11 @@ public class Element : MonoBehaviour{
 	// Use this for initialization
 
 	public Element(){
+	}
+
+	void Awake(){
+		mandiocaManager = GameObject.Find("MandiocaManager").GetComponent<MandiocaManager>();
+		placarMandioca = GameObject.Find("Placar Mandioca").GetComponent<Text>();
 	}
 
 	void Start () {
@@ -33,8 +41,13 @@ public class Element : MonoBehaviour{
 		element = ElementList [range];
 		Debug.Log("ELEMENT");
 	}
+
+	public void setElementByNumber(int elementIndex){
+		gameObject.GetComponent<Animator>().SetInteger("elementState",elementIndex);
+		element = ElementList [elementIndex-1];
+	}
 	
-	void OnCollisionEnter2D(Collision2D coll){
+	void OnCollisionStay2D(Collision2D coll){
 		if (coll.gameObject.tag == "MANDIOCA") {
 			string element_mandioca = coll.gameObject.GetComponent<Element>().element;
 			Debug.Log (element + " - "+ element_mandioca);
@@ -42,7 +55,10 @@ public class Element : MonoBehaviour{
 			int index = System.Array.IndexOf(ElementList,element);
 			if(ElementStrengthList[index] == element_mandioca){
 				Debug.Log ("FORTE!!!!!");
+
 				GameObjectUtil.Destroy(coll.gameObject);
+				mandiocaManager.AddMandioca();
+				placarMandioca.text = mandiocaManager.GetCountMandioca();
 				//float vol = volHighRange;
 				//source.PlayOneShot(shootSound,vol);
 				//mandiocaManager.AddMandioca();

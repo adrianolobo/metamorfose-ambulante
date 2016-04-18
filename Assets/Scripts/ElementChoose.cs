@@ -5,44 +5,51 @@ using System.Collections;
 public class ElementChoose : MonoBehaviour
 {
 
-    private InputState inputState;
+	private Element playerElement;
 
-
+	void Awake(){
+	}
     // Use this for initialization  
-    void Start()
-    {
-        Debug.Log("START");
-    }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+		if (Input.anyKeyDown)
         {
-            Debug.Log("Element Choose");
-            if (gameObject.transform.rotation.eulerAngles.z >= 0 && gameObject.transform.rotation.eulerAngles.z < 90.5)
-            {
-                Debug.Log("WATER");
-                // Debug.Log(GameObject.FindGameObjectWithTag("Player"));
-            }
-            if (gameObject.transform.rotation.eulerAngles.z >= 90.5 && gameObject.transform.rotation.eulerAngles.z < 180)
-            {
-                Debug.Log("ELECTRICITY");
+			if(GameObject.FindGameObjectWithTag ("Player") != null){
 
 
-            }
-            if (gameObject.transform.rotation.eulerAngles.z >= 180.1 && gameObject.transform.rotation.eulerAngles.z < 270)
-            {
-                Debug.Log("FIRE");
+				playerElement = GameObject.FindGameObjectWithTag ("Player").GetComponent<Element> ();
 
-            }
-            if (gameObject.transform.rotation.eulerAngles.z >= 270 && gameObject.transform.rotation.eulerAngles.z < 360)
-            {
-                Debug.Log("WOOD");
+	            Debug.Log("Element Choose");
+	            if (gameObject.transform.rotation.eulerAngles.z >= 0 && gameObject.transform.rotation.eulerAngles.z < 90.5)
+	            {
+					playerElement.setElementByNumber(1);
+	                Debug.Log("WATER");
+	                // 
+	            }
+	            if (gameObject.transform.rotation.eulerAngles.z >= 90.5 && gameObject.transform.rotation.eulerAngles.z < 180)
+	            {
+					playerElement.setElementByNumber(2);
+	                Debug.Log("ELECTRICITY");
 
-            }
-        }
+
+	            }
+	            if (gameObject.transform.rotation.eulerAngles.z >= 180.1 && gameObject.transform.rotation.eulerAngles.z < 270)
+	            {
+					playerElement.setElementByNumber(3);
+	                Debug.Log("FIRE");
+
+	            }
+	            if (gameObject.transform.rotation.eulerAngles.z >= 270 && gameObject.transform.rotation.eulerAngles.z < 360)
+	            {
+					playerElement.setElementByNumber(4);
+	                Debug.Log("WOOD");
+
+	            }
+			}
+		}
 
     }
 

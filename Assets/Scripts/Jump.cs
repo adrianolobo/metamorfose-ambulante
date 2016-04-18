@@ -21,7 +21,7 @@ public class Jump : MonoBehaviour {
 	void Update () {
 		if(inputState.standing){
 			if(inputState.actionButton){
-				body2d.velocity = new Vector2(transform.position.x < 0? fowardSpeed : 0,jumpSpeed);
+				//body2d.velocity = new Vector2(transform.position.x < 0? fowardSpeed : 0,jumpSpeed);
 			}
 		}
 	}
